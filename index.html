@@ -3,169 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        body{background-color: black; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: #222;
+        }
+
+        .nav-links a {
+            color: yellow;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #home h2, #home h1, #home h3 {
+            margin: 10px 0;
+        }
+
+        #about, #resume, #service, #contact {
+            padding: 50px;
+        }
         
-      /* .a1{ background-color: red; height: 700px; width: 1100px;} */
-        .a2{text-align: left; position: relative; top: 25px; font-family: Verdana, Geneva, Tahoma, sans-serif;}
-        .a3{ position: relative; left: 600px; bottom: 20px; word-spacing: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif; }
-        .a4{ font-family:Arial, Helvetica, sans-serif; font-size:x-large; position: relative; left: 50px; background-image: url("");}
-        /* .n1:hover{ background-color: red;}  */
-          .a5{color: white; align-content: center; position: relative;left: 450px; font-size: large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  }
-         .a6{position: relative; right: 460px; width: 110px;;}
-         .a7{color: white;    position: relative;left: 400px;  text-align: center; font-size: large; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
-         .a8{ color: white; height: 310px; width:  510px;  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;  background-color:rgb(27, 25, 25); position: relative;left: 30px;}
-        .a9{position: relative;left: 20px;}
-        .a10{color: white; height: 310px; width:  598px;  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;  background-color:rgb(27, 25, 25); position: relative;left: 560px; bottom: 310PX; }
-        .a11{position: relative;left: 20px;}
-        .a12{color: black; background-color: yellow; border-radius: 20px; width: 200px; height: 60px; position: relative; bottom: 250px; left: 450px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-        .a12:hover{ background-color: white;}
-        .a13{color: white;  position: relative;left: 450px;bottom: 155px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .b1{position: relative; right: 450px;}
-        .a14{text-align: center; color: white; height: 250px; width:  300px;  background-color:rgb(27, 25, 25); position: relative; right: 300px; font-family:cursive;}
-        .a15{filter: contrast( 50%); height: 120px; width: 220px; align-content:  center;filter: brightness(100%); position: relative; top: 20px;}
-        .a14:hover{ background-color: rgb(60, 119, 134);}
-        .a16{text-align: center; color: white; height: 250px; width:  300px;  background-color:rgb(27, 25, 25);  position: relative;left: 150px; bottom: 250PX; font-family:cursive;}
-        .a17{filter: contrast( 50%); height: 120px; width: 220px; align-content:  center;filter: brightness(100%); position: relative; top: 20px;}
-        .a16:hover{ background-color: rgb(60, 119, 134);}
-        .a18{color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; position: relative; bottom: 100px; }
-        .a19{position: relative; right: 430px;}
-        .a21{height: 60px; width: 60px; border-radius: 10px; border-radius: 100px; border: 1px solid yellow; position: relative;left: 65px;  }
-        .a22{height: 50px; width: 50px; position: relative;left: 2px; top: 3px;}
-        .a20{height: 180px; width: 200px;position: relative;right: 300px; text-align: center;}
-        .a23{height: 180px; width: 200px; position: relative;bottom: 280px; text-align: center;}
-        .a24{height: 60px; width: 60px; border-radius: 10px; border-radius: 100px; border: 1px solid yellow; position: relative;left: 65px; }
-        .a25{height: 50px; width: 50px; position: relative;left: 2px; top: 3px;}
-        .a26{height: 180px; width: 200px; color: white;  ;position: relative;bottom: 610px;left: 750px; text-align: center;}
-        .a27{height: 60px; width: 60px; border-radius: 10px; border-radius: 100px; border: 1px solid yellow; position: relative;left: 65px;}
-        .a28{height: 50px; width: 50px; position: relative;left: 2px; top: 3px; }
-       
 
-</style>
+        .resume-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+        }
 
+        .resume-box {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 45%;
+            text-align: left;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+        }
+
+        .service-box {
+            text-align: center;
+            width: 45%;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+        }
+
+        .contact-box {
+            text-align: center;
+        }
+
+        
+        .download-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: black;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background-color: white;
+        }
+
+    </style>
 </head>
-
 <body>
-    
-    
-    <h2 class="a2">  <span style="color: white;">Web</span> <span style="color: yellow;">Design</span></h2>
-         <nav class="a3">
-        <a class="n1"> <span style="color: white;">Home</span></a>
-        <a class="n1" ><span style="color: white;">About</span></a>
-        <a class="n1"><span style="color: white;">Resume</span></a>
-        <a class="n1"><span style="color: white;">Service</span</a>
-        <a class="n1"><span style="color: white;">Contact</span></a>
-        </nav>
-        <br><br><br><br><br>
-        <div class="a4">
-            <h2 ><span style="color: yellow;">Hello!</span></h2>
-            <h1><span style="color: white;">I'm</span> <span style="color: yellow;">Bharath<br>Kumar</span></h1>
-            <hr width="300px"  align="left">
-            <h3> <span style="color: white;">Web Designer</span></h3>     
-        </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br>
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#service">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        <div class="a5"  >
-        <h1><span style="color: yellow;">About me</span> </h1>
-        <hr width="90px" class="a6">
-        <br>
-        <p>  <b>NAME:</b >&nbsp; &nbsp;&nbsp; &nbsp; Bharath Kumar G</p> 
-        <p> <b>AGE:</b>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;24</p>
-        <p> <b>ADDRESS: </b>&nbsp;  C-73, Senbgam apartment trichy, dindugal road,Trichy</p>
-        <P> <b>PINCODE:</b> &nbsp;620001</P>
-        <p> <b>EMAIL:</b>&nbsp; &nbsp; &nbsp; &nbsp; bharathbro1912@gmail.com</p>     
-        </div>    
+    <section id="home">
+        <h2><span style="color: white;">Web</span> <span style="color: yellow;">Design</span></h2>
+        <h2><span style="color: yellow;">Hello!</span></h2>
+        <h1><span style="color: white;">I'm</span> <span style="color: yellow;">Bharath Kumar</span></h1>
+        <h3><span style="color: white;">Web Designer</span></h3>
+    </section>
 
-        <br><br><br><br><br><br><br><br<br><br><br><br>
+    <section id="about">
+        <h1><span style="color: yellow;">About me</span></h1>
+        <br><br>
+        <p><b>NAME:</b> Bharath Kumar G</p> 
+        <p><b>AGE:</b> 24</p>
+        <p><b>ADDRESS:</b> C-73, Senbagam Apartment, Trichy, Dindugal Road, Trichy</p>
+        <p><b>PINCODE:</b> 620001</p>
+        <p><b>EMAIL:</b> bharathbro1912@gmail.com</p>
+    </section>
 
-        <div class="a7">
-
-            <h1>  <span style="color: yellow;">Resume</span></h1>
-            <!-- <hr width="150px" class="a7"> -->
-            <h3><span style="color: yellow;">More of my Credentials</span> </h3>
-            <!-- <hr width="230px" class="a7"> -->
-            <br>
-
-        </div>
-
-        <br>
-
-        <div class="a8">
-            <br> 
-            <p> <span style="color: yellow;"> &nbsp;  &nbsp;  &nbsp; 2016 - 2019</span> </p> 
-            <h3>&nbsp;    &nbsp; <u>DIPLAMO IN PAPER TECHNOLOGY</u></h3>
-            <p class="a9"> &nbsp;  &nbsp;  I have completed a Diploma in Paper Technology from Seshasayee
-                <br> Institute of Technology, where I studied from 2016 to 2019. During this program, I gained in-depth knowledge of pulp and paper manufacturing, process engineering, quality control, and environmental sustainability. My coursework covered key subjects such as paper chemistry, pulp  processing, machine operations, coating technology, and recycling methods, which <br> helped me understand the technical and industrial aspects of the paper industry.</p>
-        </div>
-    
-        <div class="a10"> 
-         <br>
-
-         <p> <span style="color: yellow;">     &nbsp;  &nbsp;  &nbsp; 2020 - 2023</span> </p>
-         <h3>&nbsp;    &nbsp; <u>BACHELOR OF TECHNOLOGY</u></h3>
-        <p class="a11"> &nbsp;  &nbsp;  I hold a Bachelor of Technology in Chemical Engineering from Sastra Deemed to be University, where I studied from 2019 to 2023. Throughout my academic journey,
-             I developed a strong foundation in process engineering, thermodynamics, reaction kinetics, and material science.
-             My coursework included subjects such as  fluid mechanics, heat and mass transfer, process control, and environmental engineering,
-             which provided me with  <br>in-depth knowledge of chemical processes and industrial applications. I also worked on hands-on projects involving process optimization, sustainable energy solutions, and  <br>chemical plant design.
-        </div>
-
-         <button class="a12">Download CV</button>
-         
-        <div class="a13">
-        <h1  ><span style="color: yellow;">&nbsp; &nbsp; Service</span> </h1>
-        <!-- <hr width="100px"  class="b1"> -->
-         <h3 >What can I do for you?</h3>
-         <br>
-         <br>
-         <br>
-         <div class="a14">
-            <img  class="a15" src="Webdesign-new.png">
-            <br>
-            <br>
-            <h3 >Web Developer</h3>
-            <hr width="100px">
-        </div>
-        <div class="a16">
-            <img  class="a17" src="data-analyst-removebg-preview (1).png">
-            <br>
-            <br>
-            <h3 >Data Analyst</h3>
-            <hr width="100px">
-        </div>
-         <br><br><br><br>
-         <div class="a18">
-            <h1><span style="color: yellow;">&nbsp; &nbsp; Contact</span> </h1>
-            <hr width="130px" class="a19">
-            <br><br><br>
-        <div class="a20">
-        <div class="a21">
-                <img  class="a22" src="location-removebg-preview.png" alt="">
+    <section id="resume">
+        <h1><span style="color: yellow;">Resume</span></h1>
+        <h3><span style="color: yellow;">More of my Credentials</span></h3>
+        <br><br>
+        <div class="resume-container">
+            <div class="resume-box">
+                <p><span style="color: yellow;">2016 - 2019</span></p>
+                <h3><u>Diploma in Paper Technology</u></h3>
+                <p>I have completed a Diploma in Paper Technology from Seshasayee
+                    Institute of Technology, where I studied from 2016 to 2019. During this program,
+                     I gained in-depth knowledge of pulp and paper manufacturing, process engineering, quality control, 
+                     and environmental sustainability. My coursework covered key subjects such as paper chemistry,
+                      pulp  processing, machine operations, coating technology, and recycling methods, which  helped me 
+                      understand the technical and industrial aspects of the paper industry.</p>
             </div>
-            <h4>Where to find me</h4>
-            <p>FF5/73, Senbagam aparatment, Trichy</p>
-        </div>
-        </div>
+            <div class="resume-box">
+                <p><span style="color: yellow;">2020 - 2023</span></p>
+                <h3><u>Bachelor of Technology</u></h3>
+                <p> I hold a Bachelor of Technology in Chemical Engineering from Sastra Deemed to be University, where I studied from 2019 to 2023. Throughout my academic journey,
+                    I developed a strong foundation in process engineering, thermodynamics, reaction kinetics, and material science.
+                    My coursework included subjects such as  fluid mechanics, heat and mass transfer, process control, and environmental engineering,
+                    which provided me with  in-depth knowledge of chemical processes and industrial applications. I also worked on hands-on projects involving process optimization, sustainable energy solutions, and  chemical plant design.</p>
+            </div>
+        </div>  <a href="c:\Users\HP\Desktop\Bharath kumar_Resume.docx" download class="download-btn">Download CV</a>
+    </section>
 
-        <div class="a23">
-            <div class="a24">
-                    <img  class="a25" src="email.png" alt="">
-                </div>
+    <section id="service">
+        <h1><span style="color: yellow;">Services</span></h1>
+        <h3>What can I do for you?</h3> <br><br>
+        <div class="services-container">
+            <div class="service-box">
+                <img src="Webdesign-new.png" alt="Web Design" style="width: 200px; height: 120px;">
+                <h3>Web Developer</h3>
+            </div>
+            <div class="service-box">
+                <img src="datanew-removebg-preview.png" alt="Data Analyst" style="width: 200px; height: 120px;">
+                <h3>Data Analyst</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1><span style="color: yellow;">Contact</span></h1>
+        <br> <br><br>
+        <div class="contact-container">
+            <div class="contact-box">
+                <img src="location-removebg-preview.png" alt="Location" style="width: 50px;">
+                <h4>Where to find me</h4>
+                <p>FF5/53, Senbagam Apartment, Trichy</p>
+            </div>
+            <div class="contact-box">
+                <img src="email.png" alt="Email" style="width: 50px;">
                 <h4>Email me at</h4>
-                <p>bharathbro1912.com</p>
+                <p>bharathbro1912@gmail.com</p>
             </div>
-        </div>
-        
-        <div class="a26">
-            <div class="a27">
-                    <img  class="a28" src="phone-removebg-preview.png" alt="">
-                </div>
+            <div class="contact-box">
+                <img src="phone-removebg-preview.png" alt="Phone" style="width: 50px;">
                 <h4>Call me at</h4>
                 <p>+91 9345544154</p>
             </div>
         </div>
+    </section>
+
 </body>
 </html>
